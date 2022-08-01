@@ -1,3 +1,10 @@
+<% flash.each do |name, msg| %>
+    <%= msg %>
+<% end %>
 <h1>Vista de los Articulos</h1>
 <p><strong>Title: </strong><%= @article.title%></p>
 <p><strong>Description: </strong><%= @article.description%></p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, "turbo-confirm": "Estas seguro?"} %> |
+<%= link_to 'Mostrar todos los articulos', articles_path %>
